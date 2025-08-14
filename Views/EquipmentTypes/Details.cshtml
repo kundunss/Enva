@@ -1,0 +1,21 @@
+@model SistemApp.Models.EquipmentType
+
+@{
+    ViewData["Title"] = "Ekipman Türü Detayları";
+}
+
+<h1 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Ekipman Türü Detayları</h1>
+
+<div class="mb-6 border-b border-gray-300 pb-4">
+    <dl class="grid grid-cols-3 gap-4">
+        <dt class="font-semibold text-gray-700 dark:text-gray-300">@Html.DisplayNameFor(model => model.Name)</dt>
+        <dd class="col-span-2 text-gray-900 dark:text-white">@Html.DisplayFor(model => model.Name)</dd>
+    </dl>
+</div>
+
+<div class="flex space-x-4">
+    <a asp-action="Edit" asp-route-id="@Model.Id" 
+       class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Düzenle</a>
+    <a asp-action="Index" 
+       class="px-4 py-2 bg-gray-400 text-gray-900 rounded hover:bg-gray-500 transition">Listeye Dön</a>
+</div>

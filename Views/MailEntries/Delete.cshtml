@@ -1,0 +1,59 @@
+@model SistemApp.Models.MailEntry
+
+@{
+    ViewData["Title"] = "Delete Mail Entry";
+}
+
+<div class="max-w-3xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">Sil</h1>
+    <h3 class="text-lg text-gray-700 dark:text-gray-300 mb-6">Bu kaydı silmek istediğinize emin misiniz?</h3>
+
+    <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 mb-6">
+        <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Mail Bilgisi</h4>
+        <hr class="border-gray-300 dark:border-gray-700 mb-4" />
+
+        <dl class="grid grid-cols-1 sm:grid-cols-2 gap-y-3">
+            <div>
+                <dt class="font-medium text-gray-600 dark:text-gray-400">@Html.DisplayNameFor(model => model.Personnel)</dt>
+                <dd class="text-gray-900 dark:text-gray-100">@Html.DisplayFor(model => model.Personnel.FullName)</dd>
+            </div>
+
+            <div>
+                <dt class="font-medium text-gray-600 dark:text-gray-400">Site</dt>
+                <dd class="text-gray-900 dark:text-gray-100">@Html.DisplayFor(model => model.Personnel.Site.Name)</dd>
+            </div>
+
+            <div>
+                <dt class="font-medium text-gray-600 dark:text-gray-400">@Html.DisplayNameFor(model => model.EmailUsername)</dt>
+                <dd class="text-gray-900 dark:text-gray-100">@Html.DisplayFor(model => model.EmailUsername)</dd>
+            </div>
+
+            <div>
+                <dt class="font-medium text-gray-600 dark:text-gray-400">@Html.DisplayNameFor(model => model.Domain)</dt>
+                <dd class="text-gray-900 dark:text-gray-100">@Html.DisplayFor(model => model.Domain.Name)</dd>
+            </div>
+
+            <div>
+                <dt class="font-medium text-gray-600 dark:text-gray-400">@Html.DisplayNameFor(model => model.EmailAddress)</dt>
+                <dd class="text-gray-900 dark:text-gray-100">@Html.DisplayFor(model => model.EmailAddress)</dd>
+            </div>
+
+            <div>
+                <dt class="font-medium text-gray-600 dark:text-gray-400">@Html.DisplayNameFor(model => model.IsArchived)</dt>
+                <dd class="text-gray-900 dark:text-gray-100">@Html.DisplayFor(model => model.IsArchived)</dd>
+            </div>
+        </dl>
+    </div>
+
+    <form asp-action="Delete" class="flex items-center gap-3">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" 
+                class="px-4 py-2 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">
+            Sil
+        </button>
+        <a asp-action="Index" 
+           class="px-4 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-lg shadow hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            Listeye Dön
+        </a>
+    </form>
+</div>

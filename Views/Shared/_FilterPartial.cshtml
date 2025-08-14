@@ -1,0 +1,39 @@
+@model IEnumerable<SistemApp.Models.Site>
+
+<div class="flex flex-col lg:flex-row gap-4 mb-6">
+    <div class="flex-1">
+        <input type="text" id="searchInput" class="block w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white" placeholder="Ara..." />
+    </div>
+
+    <div class="w-full lg:w-64">
+        <select id="siteFilter" class="block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100" onchange="handleSiteFilterChange()">
+            <option value="">Tüm Şantiyeler</option>
+            @if (Model != null)
+            {
+                @foreach (var site in Model)
+                {
+                    var isSelected = ViewBag.SelectedSiteId != null && ViewBag.SelectedSiteId.ToString() == site.Id.ToString();
+                    <option value="@site.Id" selected="@isSelected">@site.Name</option>
+                }
+            }
+        </select>
+    </div>
+</div>
+
+<script>
+function handleSiteFilterChange() {
+    const siteFilter = document.getElementById('siteFilter');
+    const selectedSiteId = siteFilter.value;
+    
+    // URL'yi güncelle
+    const url = new URL(window.location);
+    if (selectedSiteId) {
+        url.searchParams.set('siteId', selectedSiteId);
+    } else {
+        url.searchParams.delete('siteId');
+    }
+    
+    // Sayfayı yeniden yükle
+    window.location.href = url.toString();
+}
+</script>

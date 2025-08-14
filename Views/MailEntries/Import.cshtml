@@ -1,0 +1,87 @@
+@{
+    ViewData["Title"] = "E-posta Kayıtları İçe Aktar";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">E-posta Kayıtları İçe Aktar</h3>
+                </div>
+                <div class="card-body">
+                    @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+                    {
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            @ViewBag.SuccessMessage
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <pre style="white-space: pre-wrap; margin: 0;">@ViewBag.ErrorMessage</pre>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form asp-action="Import" method="post" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label for="file" class="form-label">Excel Dosyası Seçin</label>
+                                    <input type="file" class="form-control" id="file" name="file" accept=".xlsx,.xls" required>
+                                    <div class="form-text">Sadece .xlsx ve .xls dosyaları kabul edilir.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-upload"></i> İçe Aktar
+                                    </button>
+                                    <a asp-action="Index" class="btn btn-secondary">
+                                        <i class="fas fa-arrow-left"></i> Geri Dön
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-light">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Excel Şablonu</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p>E-posta kayıtlarını içe aktarmak için önce Excel şablonunu indirin:</p>
+                                    <a asp-action="ExportTemplate" class="btn btn-success">
+                                        <i class="fas fa-download"></i> Excel Şablonu İndir
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="card bg-info text-white">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Kullanım Talimatları</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="mb-0">
+                                        <li><strong>Personel Adı:</strong> Sistemde kayıtlı personelin tam adını yazın (Örn: Ahmet Yılmaz)</li>
+                                        <li><strong>Site:</strong> Personelin çalıştığı sitenin adını yazın</li>
+                                        <li><strong>E-posta Kullanıcı Adı:</strong> at işaretinden önceki kısmı yazın (Örn: ahmet.yilmaz)</li>
+                                        <li><strong>Domain:</strong> E-posta domain'ini yazın (Örn: sirket.com)</li>
+                                        <li><strong>Şifre:</strong> E-posta hesabının şifresini yazın</li>
+                                        <li><strong>Önemli:</strong> Tüm alanlar zorunludur ve aynı e-posta adresi birden fazla kez eklenemez</li>
+                                        <li><strong>Format:</strong> Excel dosyasının ilk satırı başlık satırıdır, değiştirmeyin</li>
+                                        <li><strong>Pasif Personel:</strong> Pasif personel için eklenen mail adresleri otomatik olarak arşivli olarak kaydedilir</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

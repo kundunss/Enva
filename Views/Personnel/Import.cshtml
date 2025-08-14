@@ -1,0 +1,131 @@
+@{
+    ViewData["Title"] = "Personel İçe Aktarma";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>@ViewData["Title"]</h2>
+                <div>
+                    <a asp-action="ExportTemplate" class="btn btn-success me-2">
+                        <i class="fas fa-download"></i> Şablon İndir
+                    </a>
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Geri Dön
+                    </a>
+                </div>
+            </div>
+
+            @if (ViewBag.ErrorMessages != null)
+            {
+                <div class="alert alert-warning">
+                    <h5><i class="fas fa-exclamation-triangle"></i> İçe Aktarma Tamamlandı (Bazı Hatalar Var)</h5>
+                    @if (ViewBag.ImportedCount != null && ViewBag.ImportedCount > 0)
+                    {
+                        <p><strong>@ViewBag.ImportedCount personel başarıyla içe aktarıldı.</strong></p>
+                    }
+                    <p><strong>Hatalar:</strong></p>
+                    <ul>
+                        @foreach (var error in ViewBag.ErrorMessages)
+                        {
+                            <li>@error</li>
+                        }
+                    </ul>
+                </div>
+            }
+
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i> @TempData["SuccessMessage"]
+                </div>
+            }
+
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-circle"></i> @TempData["ErrorMessage"]
+                </div>
+            }
+
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-upload"></i> Excel Dosyası Yükle
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Import" method="post" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken()
+                        
+                        <div class="mb-3">
+                            <label for="file" class="form-label">Excel Dosyası Seçin</label>
+                            <input type="file" class="form-control" id="file" name="file" accept=".xlsx,.xls" required>
+                            <div class="form-text">
+                                Sadece .xlsx ve .xls formatındaki dosyalar kabul edilir.
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-upload"></i> İçe Aktar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-info-circle"></i> Kullanım Talimatları
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Excel Dosyası Formatı:</h6>
+                            <ul>
+                                <li><strong>1. Sütun:</strong> Ad (Zorunlu)</li>
+                                <li><strong>2. Sütun:</strong> Soyad (Zorunlu)</li>
+                                <li><strong>3. Sütun:</strong> Şantiye Adı (Zorunlu)</li>
+                                <li><strong>4. Sütun:</strong> Durum (İsteğe bağlı)</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Durum Değerleri:</h6>
+                            <ul>
+                                <li><strong>Aktif için:</strong> Aktif, Active, 1, True</li>
+                                <li><strong>Pasif için:</strong> Pasif, Inactive, 0, False</li>
+                                <li><strong>Boş bırakılırsa:</strong> Varsayılan olarak Aktif</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-info mt-3">
+                        <i class="fas fa-lightbulb"></i>
+                        <strong>İpucu:</strong> Önce "Şablon İndir" butonuna tıklayarak örnek Excel dosyasını indirin. 
+                        Bu dosyada geçerli şantiye listesi ve örnek veriler bulunmaktadır.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // File input validation
+        document.getElementById('file').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const fileName = file.name.toLowerCase();
+                if (!fileName.endsWith('.xlsx') && !fileName.endsWith('.xls')) {
+                    alert('Sadece Excel dosyaları (.xlsx, .xls) kabul edilir.');
+                    e.target.value = '';
+                }
+            }
+        });
+    </script>
+}

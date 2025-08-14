@@ -1,0 +1,55 @@
+@model IEnumerable<SistemApp.Models.ApplicationUser>
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h1 class="text-3xl font-bold mb-6">@ViewData["Title"]</h1>
+
+<p class="mb-4">
+    <a asp-action="Create" 
+       class="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition">
+        Create New
+    </a>
+</p>
+
+<div class="overflow-x-auto">
+    <table class="min-w-full bg-white border border-gray-300 rounded-md">
+        <thead class="bg-gray-100 text-gray-700">
+            <tr>
+                <th class="text-left px-4 py-3 border-b border-gray-300">@Html.DisplayNameFor(model => model.UserName)</th>
+                <th class="text-left px-4 py-3 border-b border-gray-300">@Html.DisplayNameFor(model => model.FirstName)</th>
+                <th class="text-left px-4 py-3 border-b border-gray-300">@Html.DisplayNameFor(model => model.LastName)</th>
+                <th class="text-left px-4 py-3 border-b border-gray-300">@Html.DisplayNameFor(model => model.Role)</th>
+                <th class="text-left px-4 py-3 border-b border-gray-300">@Html.DisplayNameFor(model => model.Email)</th>
+                <th class="text-left px-4 py-3 border-b border-gray-300">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="text-gray-800">
+            @foreach (var item in Model)
+            {
+                <tr class="even:bg-gray-50 hover:bg-gray-100">
+                    <td class="px-4 py-2 border-b border-gray-300">@Html.DisplayFor(modelItem => item.UserName)</td>
+                    <td class="px-4 py-2 border-b border-gray-300">@Html.DisplayFor(modelItem => item.FirstName)</td>
+                    <td class="px-4 py-2 border-b border-gray-300">@Html.DisplayFor(modelItem => item.LastName)</td>
+                    <td class="px-4 py-2 border-b border-gray-300">@Html.DisplayFor(modelItem => item.Role)</td>
+                    <td class="px-4 py-2 border-b border-gray-300">@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td class="px-4 py-2 border-b border-gray-300 space-x-2">
+                        <a asp-action="Edit" asp-route-id="@item.Id" 
+                           class="inline-block px-2 py-1 bg-yellow-400 hover:bg-yellow-500 text-gray-900 rounded text-sm font-semibold transition">
+                            Edit
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.Id" 
+                           class="inline-block px-2 py-1 bg-blue-400 hover:bg-blue-500 text-white rounded text-sm font-semibold transition">
+                            Details
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" 
+                           class="inline-block px-2 py-1 bg-red-600 hover:bg-red-700 text-white rounded text-sm font-semibold transition">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

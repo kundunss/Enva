@@ -1,0 +1,76 @@
+@model SistemApp.Models.InventoryItem
+
+@{
+    ViewData["Title"] = "QR Kod Yazdır";
+    Layout = "_Layout";
+}
+
+<div class="print-container max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-3xl font-bold">@ViewData["Title"]</h1>
+        <button onclick="window.print()" 
+                class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md transition print:hidden">
+            <i class="fas fa-print mr-2"></i> Yazdır
+        </button>
+    </div>
+    
+    <div class="print-content flex flex-col items-center">
+        <div class="qr-code-container border border-gray-300 p-6 rounded-md bg-white mb-6">
+            @if(ViewBag.QrCodeUrl != null)
+            {
+               <img src="@Url.Action("GenerateQRCode", "InventoryItems", new { url = ViewBag.QrCodeUrl })" 
+     alt="QR Kod" class="w-64 h-64" />
+            }
+            else
+            {
+                <p class="text-red-500">QR kod için URL bulunamadı!</p>
+            }
+        </div>
+        
+        <div class="equipment-info text-center mb-6">
+            <h2 class="text-xl font-bold mb-2">@Model.EquipmentType?.Name</h2>
+            <p class="text-gray-700 mb-1">@Model.Description</p>
+            @if (!string.IsNullOrEmpty(Model.SerialNumber))
+            {
+                <p class="text-gray-700 mb-1">Seri No: @Model.SerialNumber</p>
+            }
+            <p class="text-gray-700">Atanan Kişi: @Model.Personnel?.FullName</p>
+            <p class="text-gray-700">Şantiye: @Model.Personnel?.Site?.Name</p>
+        </div>
+        
+        <div class="instructions text-sm text-gray-600 mb-4">
+            <p>Bu QR kodu taratarak ekipman detaylarına erişebilirsiniz.</p>
+            @if(ViewBag.QrCodeUrl != null)
+            {
+                <p class="break-all">URL: @ViewBag.QrCodeUrl</p>
+            }
+        </div>
+    </div>
+    
+    <div class="mt-6 print:hidden">
+        <a asp-action="Details" asp-route-id="@Model.Id" 
+           class="px-5 py-2 bg-gray-600 hover:bg-gray-700 text-white font-semibold rounded-md transition">
+            Detaylara Geri Dön
+        </a>
+    </div>
+</div>
+
+<style>
+    @@media print {
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .print-container {
+            box-shadow: none;
+            padding: 0;
+            margin: 0 auto;
+        }
+        .print-content {
+            page-break-inside: avoid;
+        }
+        .print\:hidden {
+            display: none !important;
+        }
+    }
+</style>

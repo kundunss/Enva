@@ -1,0 +1,63 @@
+@model SistemApp.Models.InventoryItem
+
+@{
+    ViewData["Title"] = "Edit Inventory Item";
+}
+
+<h1 class="text-3xl font-bold mb-6">@ViewData["Title"]</h1>
+
+<hr class="mb-6 border-gray-300" />
+
+<div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+    <form asp-action="Edit" novalidate>
+        <div asp-validation-summary="ModelOnly" class="text-red-600 mb-4"></div>
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-5">
+            <label asp-for="EquipmentTypeId" class="block text-sm font-medium text-gray-700 mb-1"></label>
+            <select asp-for="EquipmentTypeId" asp-items="ViewBag.EquipmentTypeId" 
+                class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"></select>
+            <span asp-validation-for="EquipmentTypeId" class="text-red-600 text-sm mt-1 block"></span>
+        </div>
+
+        <div class="mb-5">
+            <label asp-for="SerialNumber" class="block text-sm font-medium text-gray-700 mb-1"></label>
+            <input asp-for="SerialNumber" 
+                class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900" />
+            <span asp-validation-for="SerialNumber" class="text-red-600 text-sm mt-1 block"></span>
+        </div>
+
+        <div class="mb-5">
+            <label asp-for="Description" class="block text-sm font-medium text-gray-700 mb-1"></label>
+            <input asp-for="Description" 
+                class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900" />
+            <span asp-validation-for="Description" class="text-red-600 text-sm mt-1 block"></span>
+        </div>
+
+        <div class="mb-5">
+            <label asp-for="PersonnelId" class="block text-sm font-medium text-gray-700 mb-1"></label>
+            <select asp-for="PersonnelId" asp-items="ViewBag.PersonnelId" 
+                class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"></select>
+            <span asp-validation-for="PersonnelId" class="text-red-600 text-sm mt-1 block"></span>
+        </div>
+
+        <div class="flex items-center mb-6">
+            <input asp-for="IsArchived" type="checkbox" id="IsArchived"
+                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded bg-white" />
+            <label for="IsArchived" class="ml-2 block text-sm text-gray-700">@Html.DisplayNameFor(model => model.IsArchived)</label>
+        </div>
+
+        <div class="flex space-x-4">
+            <input type="submit" value="Save" 
+                class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md cursor-pointer transition-colors duration-200" />
+            <a asp-action="Index" 
+                class="px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white font-semibold rounded-md transition-colors duration-200 inline-block text-center">
+                Back to List
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

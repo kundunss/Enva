@@ -1,0 +1,75 @@
+@model SistemApp.Models.InventoryItem
+
+@{
+    ViewData["Title"] = "Inventory Item Details";
+}
+
+<h1 class="text-3xl font-bold mb-6">@ViewData["Title"]</h1>
+
+<div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+    <hr class="mb-6 border-gray-300" />
+    <dl class="grid grid-cols-1 sm:grid-cols-3 gap-y-4 gap-x-6 text-gray-700">
+        <dt class="font-semibold">@(Html.DisplayNameFor(model => model.EquipmentType))</dt>
+        <dd class="sm:col-span-2">@Html.DisplayFor(model => model.EquipmentType.Name)</dd>
+
+        <dt class="font-semibold">@(Html.DisplayNameFor(model => model.Description))</dt>
+        <dd class="sm:col-span-2">@Html.DisplayFor(model => model.Description)</dd>
+
+        <dt class="font-semibold">@(Html.DisplayNameFor(model => model.Personnel))</dt>
+        <dd class="sm:col-span-2">@Html.DisplayFor(model => model.Personnel.FullName)</dd>
+
+        <dt class="font-semibold">Site</dt>
+        <dd class="sm:col-span-2">@Html.DisplayFor(model => model.Personnel.Site.Name)</dd>
+
+        <dt class="font-semibold">@(Html.DisplayNameFor(model => model.IsArchived))</dt>
+        <dd class="sm:col-span-2">@Html.DisplayFor(model => model.IsArchived)</dd>
+    </dl>
+
+    <div class="mt-8 flex flex-wrap gap-4">
+        <a asp-action="Edit" asp-route-id="@Model.Id" 
+           class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md transition">
+            Edit
+        </a>
+        <a asp-action="PrintQRCode" asp-route-id="@Model.Id" 
+           class="px-5 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md transition">
+            QR Kod Yazdır
+        </a>
+        <a asp-action="Index" 
+           class="px-5 py-2 bg-gray-600 hover:bg-gray-700 text-white font-semibold rounded-md transition">
+            Back to List
+        </a>
+    </div>
+    
+    <div class="mt-6 flex flex-col items-center">
+        <h4 class="text-xl font-semibold mb-4">QR Kod</h4>
+        <div class="border border-gray-300 p-4 rounded-md bg-white">
+            <img src="@Url.Action("GenerateQRCode", "InventoryItems", new { url = ViewBag.QrCodeUrl })" 
+     alt="QR Kod" class="w-64 h-64" />
+        </div>
+        <p class="mt-2 text-sm text-gray-600">Bu QR kodu taratarak ekipman detaylarına erişebilirsiniz.</p>
+    </div>
+
+    @if (Model.AssignmentHistory != null && Model.AssignmentHistory.Any())
+    {
+        <div class="mt-10">
+            <h4 class="text-xl font-semibold mb-4">Assignment History</h4>
+            <table class="min-w-full border border-gray-300 rounded-md overflow-hidden">
+                <thead class="bg-gray-100">
+                    <tr>
+                        <th class="text-left px-4 py-2 border-b border-gray-300">Date</th>
+                        <th class="text-left px-4 py-2 border-b border-gray-300">Personnel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var history in Model.AssignmentHistory.OrderByDescending(h => h.AssignedDate))
+                    {
+                        <tr class="even:bg-gray-50">
+                            <td class="px-4 py-2 border-b border-gray-300">@history.AssignedDate.ToString("yyyy-MM-dd HH:mm")</td>
+                            <td class="px-4 py-2 border-b border-gray-300">@history.Personnel?.FullName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

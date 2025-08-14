@@ -1,0 +1,77 @@
+@model SistemApp.Models.SystemHardware
+
+@{
+    ViewData["Title"] = "System Hardware Details";
+}
+
+<div class="container mx-auto px-4 py-6">
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">System Hardware Details</h1>
+
+        <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
+            <dl class="divide-y divide-gray-200 dark:divide-gray-700">
+                <div class="py-3 grid grid-cols-3 gap-4">
+                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">Equipment Type</dt>
+                    <dd class="col-span-2 text-sm text-gray-900 dark:text-white">@Model.EquipmentType?.Name</dd>
+                </div>
+                <div class="py-3 grid grid-cols-3 gap-4">
+                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">Description</dt>
+                    <dd class="col-span-2 text-sm text-gray-900 dark:text-white">@Model.Description</dd>
+                </div>
+                <div class="py-3 grid grid-cols-3 gap-4">
+                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">IP Address</dt>
+                    <dd class="col-span-2 text-sm text-gray-900 dark:text-white">@Model.IpAddress</dd>
+                </div>
+                <div class="py-3 grid grid-cols-3 gap-4">
+                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">Username</dt>
+                    <dd class="col-span-2 text-sm text-gray-900 dark:text-white">@Model.Username</dd>
+                </div>
+                <div class="py-3 grid grid-cols-3 gap-4">
+                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">Password</dt>
+                    <dd class="col-span-2 text-sm text-gray-900 dark:text-white">@Model.Password</dd>
+                </div>
+                <div class="py-3 grid grid-cols-3 gap-4">
+                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">Site</dt>
+                    <dd class="col-span-2 text-sm text-gray-900 dark:text-white">@Model.Site?.Name</dd>
+                </div>
+            </dl>
+        </div>
+
+        <div class="flex space-x-4 mt-6">
+            <a asp-action="Edit" asp-route-id="@Model.Id" 
+               class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200">
+                Edit
+            </a>
+            <a asp-action="Index" 
+               class="inline-flex items-center px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white font-medium rounded-lg transition-colors duration-200">
+                Back to List
+            </a>
+        </div>
+
+        @if (Model.PasswordHistory != null && Model.PasswordHistory.Any())
+        {
+            <div class="mt-8">
+                <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Eski Şifreler</h4>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                        <thead class="bg-gray-50 dark:bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Değiştirme Tarihi</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Eski Şifre</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                            @foreach (var history in Model.PasswordHistory.OrderByDescending(h => h.ChangedDate))
+                            {
+                                <tr>
+                                    <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">@history.ChangedDate.ToString("dd.MM.yyyy HH:mm")</td>
+                                    <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">@history.OldPassword</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+</div>

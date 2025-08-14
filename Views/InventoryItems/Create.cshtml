@@ -1,0 +1,74 @@
+@model SistemApp.Models.InventoryItem
+
+@{
+    ViewData["Title"] = "Envanter Ekle";
+}
+
+<div class="container mx-auto px-4 py-6">
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <div class="flex items-center justify-between mb-6">
+            <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Envanter Ekle</h1>
+            @if (ViewBag.SelectedCompanyName != null)
+            {
+                <div class="hidden">
+                    @ViewBag.SelectedCompanyName
+                </div>
+            }
+        </div>
+        
+        <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
+            <div class="max-w-2xl">
+                <form asp-action="Create" class="space-y-6">
+                    <div asp-validation-summary="ModelOnly" class="bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 text-red-700 dark:text-red-300 px-4 py-3 rounded"></div>
+                    
+                    <div>
+                        <label asp-for="EquipmentTypeId" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Ekipman Türü</label>
+                        <select asp-for="EquipmentTypeId" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white" asp-items="ViewBag.EquipmentTypeId">
+                            <option value="">Seçiniz...</option>
+                        </select>
+                        <span asp-validation-for="EquipmentTypeId" class="text-red-600 dark:text-red-400 text-sm mt-1 block"></span>
+                    </div>
+                    
+                    <div>
+                        <label asp-for="SerialNumber" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Seri Numarası</label>
+                        <input asp-for="SerialNumber" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white" />
+                        <span asp-validation-for="SerialNumber" class="text-red-600 dark:text-red-400 text-sm mt-1 block"></span>
+                    </div>
+                    
+                    <div>
+                        <label asp-for="Description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Açıklama</label>
+                        <input asp-for="Description" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white" />
+                        <span asp-validation-for="Description" class="text-red-600 dark:text-red-400 text-sm mt-1 block"></span>
+                    </div>
+                    
+                    <div>
+                        <label asp-for="PersonnelId" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Personel</label>
+                        <select asp-for="PersonnelId" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white" asp-items="ViewBag.PersonnelId">
+                            <option value="">Seçiniz...</option>
+                        </select>
+                        <span asp-validation-for="PersonnelId" class="text-red-600 dark:text-red-400 text-sm mt-1 block"></span>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <input asp-for="IsArchived" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700" />
+                        <label asp-for="IsArchived" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">Arşivlenmiş</label>
+                    </div>
+                    
+                    <div class="flex space-x-4 pt-6">
+                        <input type="submit" value="Kaydet" class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200" />
+                        <a asp-action="Index" class="inline-flex items-center px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white font-medium rounded-lg transition-colors duration-200">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                            </svg>
+                            Listeye Dön
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

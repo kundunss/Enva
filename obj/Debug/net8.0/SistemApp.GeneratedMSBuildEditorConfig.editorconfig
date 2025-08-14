@@ -1,0 +1,251 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = SistemApp
+build_property.RootNamespace = SistemApp
+build_property.ProjectDir = C:\Users\Mesa003026\Documents\Sistem\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Mesa003026\Documents\Sistem
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Companies/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFuaWVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Companies/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFuaWVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Companies/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFuaWVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Companies/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFuaWVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Companies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGFuaWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Domains/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9tYWluc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Domains/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9tYWluc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Domains/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9tYWluc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Domains/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9tYWluc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Domains/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9tYWluc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/EquipmentTypes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50VHlwZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/EquipmentTypes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50VHlwZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/EquipmentTypes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50VHlwZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/EquipmentTypes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50VHlwZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/EquipmentTypes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50VHlwZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/InventoryItems/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5SXRlbXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/InventoryItems/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5SXRlbXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/InventoryItems/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5SXRlbXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/InventoryItems/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5SXRlbXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/InventoryItems/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5SXRlbXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/InventoryItems/PrintQRCode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5SXRlbXNcUHJpbnRRUkNvZGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/MailEntries/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbEVudHJpZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/MailEntries/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbEVudHJpZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/MailEntries/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbEVudHJpZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/MailEntries/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbEVudHJpZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/MailEntries/Import.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbEVudHJpZXNcSW1wb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/MailEntries/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbEVudHJpZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Personnel/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Personnel/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Personnel/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Personnel/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Personnel/Import.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXEltcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Personnel/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Shared/_FilterPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9GaWx0ZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Sites/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l0ZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Sites/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l0ZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Sites/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l0ZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Sites/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l0ZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Sites/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l0ZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/SystemHardware/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtSGFyZHdhcmVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/SystemHardware/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtSGFyZHdhcmVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/SystemHardware/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtSGFyZHdhcmVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/SystemHardware/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtSGFyZHdhcmVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/SystemHardware/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtSGFyZHdhcmVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Users/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Users/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Users/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Users/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-h6lhleo1ap

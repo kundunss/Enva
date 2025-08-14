@@ -1,0 +1,62 @@
+@model SistemApp.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Giriş";
+}
+
+<h1 class="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">@ViewData["Title"]</h1>
+
+<div class="max-w-md mx-auto bg-white dark:bg-gray-900 p-8 rounded-lg shadow-md">
+    <form id="account" method="post" novalidate>
+        <h2 class="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-200">Giriş yapmak için bilgileri doldurunuz..</h2>
+        <hr class="mb-6 border-gray-300 dark:border-gray-700" />
+
+        <div asp-validation-summary="ModelOnly" class="text-red-600 mb-4"></div>
+
+        <div class="mb-5">
+            <label asp-for="Username" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"> Kullanıcı Adı </label>
+            <input asp-for="Username" autocomplete="username" aria-required="true"
+                class="w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+            <span asp-validation-for="Username" class="text-red-600 text-sm mt-1 block"></span>
+        </div>
+
+        <div class="mb-5">
+            <label asp-for="Password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"> Şifre </label>
+            <input asp-for="Password" type="password" autocomplete="current-password" aria-required="true"
+                class="w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+            <span asp-validation-for="Password" class="text-red-600 text-sm mt-1 block"></span>
+        </div>
+
+        <div class="mb-5">
+            <label asp-for="CompanyId" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"> Firma</label>
+            <select asp-for="CompanyId" aria-required="true"
+                class="w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <option value="" class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">Firma Seçiniz</option>
+                @if (ViewBag.Companies != null)
+                {
+                    foreach (var company in ViewBag.Companies as IEnumerable<SistemApp.Models.Company>)
+                    {
+                        <option value="@company.Id" class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">@company.Name</option>
+                    }
+                }
+            </select>
+            <span asp-validation-for="CompanyId" class="text-red-600 text-sm mt-1 block"></span>
+        </div>
+
+        <div class="flex items-center mb-6">
+            <input type="checkbox" asp-for="RememberMe" id="RememberMe"
+                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 dark:border-gray-700 rounded bg-white dark:bg-gray-800" />
+            <label for="RememberMe" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+                Beni Hatırla
+            </label>
+        </div>
+
+        <button id="login-submit" type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md transition-colors duration-200">
+            Giriş Yap
+        </button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
