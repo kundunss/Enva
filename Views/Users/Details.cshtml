@@ -1,27 +1,27 @@
 @model SistemApp.Models.ApplicationUser
 
 @{
-    ViewData["Title"] = "User Details";
+    ViewData["Title"] = "Kullanıcı Detayları";
 }
 
-<h1 class="text-3xl font-bold mb-6">User Details</h1>
+<h1 class="text-3xl font-bold mb-6">Kullanıcı Detayları</h1>
 
 <div class="mb-6 border-b border-gray-300 pb-6">
     <dl class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
         <div>
-            <dt class="text-sm font-semibold text-gray-600">Username</dt>
+            <dt class="text-sm font-semibold text-gray-600">Kullanıcı Adı</dt>
             <dd class="mt-1 text-gray-900">@Html.DisplayFor(model => model.UserName)</dd>
         </div>
         <div>
-            <dt class="text-sm font-semibold text-gray-600">First Name</dt>
+            <dt class="text-sm font-semibold text-gray-600">Ad</dt>
             <dd class="mt-1 text-gray-900">@Html.DisplayFor(model => model.FirstName)</dd>
         </div>
         <div>
-            <dt class="text-sm font-semibold text-gray-600">Last Name</dt>
+            <dt class="text-sm font-semibold text-gray-600">Soyad</dt>
             <dd class="mt-1 text-gray-900">@Html.DisplayFor(model => model.LastName)</dd>
         </div>
         <div>
-            <dt class="text-sm font-semibold text-gray-600">Role</dt>
+            <dt class="text-sm font-semibold text-gray-600">Rol</dt>
             <dd class="mt-1 text-gray-900">@Html.DisplayFor(model => model.Role)</dd>
         </div>
     </dl>
@@ -29,7 +29,7 @@
 
 <div class="flex space-x-3">
     <a asp-action="Edit" asp-route-id="@Model.Id"
-       class="px-5 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Edit</a>
+       class="px-5 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Düzenle</a>
     <a asp-action="Index"
-       class="px-5 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 transition">Back to List</a>
+       class="px-5 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 transition">Listeye Dön</a>
 </div>

@@ -66,6 +66,42 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9tYWluc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Mesa003026/Documents/Sistem/Views/EnvaFinance/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52YUZpbmFuY2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/EnvaPay/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52YVBheVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/EnvaPay/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52YVBheVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/EnvaPay/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52YVBheVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/EnvaPay/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52YVBheVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/EnvaService/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52YVNlcnZpY2VcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/EnvaService/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52YVNlcnZpY2VcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/EnvaService/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52YVNlcnZpY2VcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/EnvaService/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52YVNlcnZpY2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Mesa003026/Documents/Sistem/Views/EquipmentTypes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50VHlwZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -84,6 +120,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Mesa003026/Documents/Sistem/Views/EquipmentTypes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBtZW50VHlwZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mesa003026/Documents/Sistem/Views/Home/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mesa003026/Documents/Sistem/Views/Home/Index.cshtml]

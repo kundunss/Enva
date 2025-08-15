@@ -1,0 +1,35 @@
+@model SistemApp.Models.ServiceEntry
+@{
+    ViewData["Title"] = "Hizmet Düzenle";
+}
+<div class="container mx-auto px-4 py-6 max-w-lg">
+    <h1 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Hizmet Düzenle</h1>
+    <form asp-action="Edit" class="space-y-6 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <div asp-validation-summary="ModelOnly" class="text-red-700 dark:text-red-400 bg-red-100 dark:bg-red-900 rounded px-4 py-3"></div>
+        <input type="hidden" asp-for="Id" />
+        <div>
+            <label asp-for="Date" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Tarih</label>
+            <input asp-for="Date" type="date" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+            <span asp-validation-for="Date" class="text-red-600 dark:text-red-400 text-sm mt-1 block"></span>
+        </div>
+        <input type="hidden" asp-for="CompanyId" />
+        <div>
+            <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Firma</label>
+            <input type="text" value="@Model.Company?.Name" readonly class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white" />
+        </div>
+        <div>
+            <label asp-for="Description" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Açıklama</label>
+            <input asp-for="Description" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+            <span asp-validation-for="Description" class="text-red-600 dark:text-red-400 text-sm mt-1 block"></span>
+        </div>
+        <div>
+            <label asp-for="Amount" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Tutar</label>
+            <input asp-for="Amount" type="number" step="0.01" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+            <span asp-validation-for="Amount" class="text-red-600 dark:text-red-400 text-sm mt-1 block"></span>
+        </div>
+        <div class="flex justify-end gap-2">
+            <a asp-action="Index" class="btn btn-secondary">İptal</a>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </div>
+    </form>
+</div>

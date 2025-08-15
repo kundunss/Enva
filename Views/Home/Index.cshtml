@@ -1,94 +1,56 @@
-@{
-    ViewData["Title"] = "Ana Sayfa";
-}
-
-<div class="container mx-auto px-4 py-12">
-    <div class="text-center">
-        <h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-6">Enva'ya Hoş Geldiniz</h1>
-        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
-            Bu uygulama ile sistem donanımları, personel bilgileri, envanter öğeleri ve mail hesaplarını yönetebilirsiniz.
-        </p>
-        
-        <!-- Ortalanmış kutular -->
-        <div class="flex flex-wrap justify-center gap-6 mt-12">
-            
-            <!-- EnvaNetwork -->
-            <div class="flex-grow max-w-xs bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-200">
-                <div class="text-blue-600 dark:text-blue-400 mb-4">
-                    <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                              d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2
-                                 M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10
-                                 a2 2 0 002 2zM9 9h6v6H9V9z">
-                        </path>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">EnvaNetwork</h3>
-                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                    Ağ cihazları ve sistem donanımlarını yönetin
-                </p>
-                <a href="/SystemHardware" 
-                   class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 
-                          text-white text-sm font-medium rounded transition-colors duration-200">
-                    Görüntüle
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                              d="M9 5l7 7-7 7">
-                        </path>
-                    </svg>
-                </a>
-            </div>
-<!-- EnvaMail -->
-            <div class="flex-grow max-w-xs bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-200">
-                <div class="text-red-600 dark:text-red-400 mb-4">
-                    <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                              d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8
-                                 M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5
-                                 a2 2 0 00-2 2v10a2 2 0 002 2z">
-                        </path>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">EnvaMail</h3>
-                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                    E-posta hesaplarını ve şifrelerini yönetin
-                </p>
-                <a href="/MailEntries" 
-                   class="inline-flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 
-                          text-white text-sm font-medium rounded transition-colors duration-200">
-                    Görüntüle
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                              d="M9 5l7 7-7 7">
-                        </path>
-                    </svg>
-                </a>
-            </div>
-            <!-- Envanter -->
-            <div class="flex-grow max-w-xs bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-200">
-                <div class="text-purple-600 dark:text-purple-400 mb-4">
-                    <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                              d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7
-                                 m8 4v10M4 7v10l8 4">
-                        </path>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Envanter</h3>
-                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                    Envanter öğelerini ve atamalarını takip edin
-                </p>
-                <a href="/InventoryItems" 
-                   class="inline-flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 
-                          text-white text-sm font-medium rounded transition-colors duration-200">
-                    Görüntüle
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                              d="M9 5l7 7-7 7">
-                        </path>
-                    </svg>
-                </a>
-            </div>
+<div class="p-4">
+    <div class="bg-white rounded-xl shadow p-8 mb-10 flex flex-col items-center">
+        <h1 class="text-4xl font-extrabold text-center mb-2">Enva'ya Hoş Geldiniz</h1>
+        <div class="text-center text-gray-500 mb-2">Bu uygulama ile sistem donanımları, personel bilgileri, envanter öğeleri ve mail hesaplarını yönetebilirsiniz.</div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl shadow p-8 flex flex-col items-center">
+            <span class="mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3a.75.75 0 01.75.75V5.5h3V3.75a.75.75 0 011.5 0V5.5h.25A2.25 2.25 0 0120 7.75v8.5A2.25 2.25 0 0117.75 18h-.25v1.25a.75.75 0 01-1.5 0V18h-3v1.25a.75.75 0 01-1.5 0V18h-.25A2.25 2.25 0 014 16.25v-8.5A2.25 2.25 0 016.25 5.5h.25V3.75A.75.75 0 018 3.75V5.5h3V3.75A.75.75 0 019.75 3z" /></svg>
+            </span>
+            <div class="text-xl font-bold mb-1">EnvaNetwork</div>
+            <div class="text-gray-500 mb-4 text-center">Ağ cihazları ve sistem donanımlarını yönetin</div>
+            <a href="/SystemHardware" class="w-full mt-auto px-4 py-2 rounded bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">Görüntüle</a>
+        </div>
+        <div class="bg-white rounded-xl shadow p-8 flex flex-col items-center">
+            <span class="mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            </span>
+            <div class="text-xl font-bold mb-1">EnvaMail</div>
+            <div class="text-gray-500 mb-4 text-center">E-posta hesaplarını ve şifrelerini yönetin</div>
+            <a href="/MailEntries" class="w-full mt-auto px-4 py-2 rounded bg-red-600 text-white font-semibold hover:bg-red-700 transition">Görüntüle</a>
+        </div>
+        <div class="bg-white rounded-xl shadow p-8 flex flex-col items-center">
+            <span class="mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 16V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2h14a2 2 0 002-2z" /></svg>
+            </span>
+            <div class="text-xl font-bold mb-1">Envanter</div>
+            <div class="text-gray-500 mb-4 text-center">Envanter öğelerini ve atamalarını takip edin</div>
+            <a href="/InventoryItems" class="w-full mt-auto px-4 py-2 rounded bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">Görüntüle</a>
+        </div>
+        <div class="bg-white rounded-xl shadow p-8 flex flex-col items-center">
+            <span class="mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3a.75.75 0 01.75.75V5.5h3V3.75a.75.75 0 011.5 0V5.5h.25A2.25 2.25 0 0120 7.75v8.5A2.25 2.25 0 0117.75 18h-.25v1.25a.75.75 0 01-1.5 0V18h-3v1.25a.75.75 0 01-1.5 0V18h-.25A2.25 2.25 0 014 16.25v-8.5A2.25 2.25 0 016.25 5.5h.25V3.75A.75.75 0 018 3.75V5.5h3V3.75A.75.75 0 019.75 3z" /></svg>
+            </span>
+            <div class="text-xl font-bold mb-1">EnvaService</div>
+            <div class="text-gray-500 mb-4 text-center">Hizmet kayıtları ve borç takibi</div>
+            <a href="/EnvaService" class="w-full mt-auto px-4 py-2 rounded bg-green-600 text-white font-semibold hover:bg-green-700 transition">Görüntüle</a>
+        </div>
+        <div class="bg-white rounded-xl shadow p-8 flex flex-col items-center">
+            <span class="mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 10c-4.41 0-8-1.79-8-4V8c0-2.21 3.59-4 8-4s8 1.79 8 4v6c0 2.21-3.59 4-8 4z" /></svg>
+            </span>
+            <div class="text-xl font-bold mb-1">EnvaPay</div>
+            <div class="text-gray-500 mb-4 text-center">Ödeme işlemleri ve tahsilat</div>
+            <a href="/EnvaPay" class="w-full mt-auto px-4 py-2 rounded bg-yellow-500 text-white font-semibold hover:bg-yellow-600 transition">Görüntüle</a>
+        </div>
+        <div class="bg-white rounded-xl shadow p-8 flex flex-col items-center">
+            <span class="mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17a4 4 0 004 4h10a4 4 0 004-4V7a4 4 0 00-4-4H7a4 4 0 00-4 4v10z" /></svg>
+            </span>
+            <div class="text-xl font-bold mb-1">EnvaFinance</div>
+            <div class="text-gray-500 mb-4 text-center">Finansal özet ve raporlar</div>
+            <a href="/EnvaFinance" class="w-full mt-auto px-4 py-2 rounded bg-cyan-600 text-white font-semibold hover:bg-cyan-700 transition">Görüntüle</a>
         </div>
     </div>
 </div>

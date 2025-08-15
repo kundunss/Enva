@@ -16,5 +16,7 @@ namespace SistemApp.Models
         // Navigation properties
         public ICollection<Site>? Sites { get; set; }
         public ICollection<SystemHardware>? SystemHardware { get; set; }
+        public ICollection<ServiceEntry>? ServiceEntries { get; set; }
+        public ICollection<PayEntry>? PayEntries { get; set; }
     }
 }

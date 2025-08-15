@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SistemApp.Data;
 
@@ -10,9 +11,11 @@ using SistemApp.Data;
 namespace SistemApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250815181252_AddPayEntryTable")]
+    partial class AddPayEntryTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
@@ -737,7 +740,7 @@ namespace SistemApp.Migrations
             modelBuilder.Entity("SistemApp.Models.ServiceEntry", b =>
                 {
                     b.HasOne("SistemApp.Models.Company", "Company")
-                        .WithMany("ServiceEntries")
+                        .WithMany()
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -785,8 +788,6 @@ namespace SistemApp.Migrations
 
             modelBuilder.Entity("SistemApp.Models.Company", b =>
                 {
-                    b.Navigation("ServiceEntries");
-
                     b.Navigation("Sites");
 
                     b.Navigation("SystemHardware");

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "w2uikPwdnVDWnVgDJKwFhBXwRmwRutNLtRRMOg8ufkU=",
+  "Hash": "usrAu/ml5IXNoG0KRsu+TQpzt+x8+1Whrp7QmiGzmfY=",
   "Source": "SistemApp",
   "BasePath": "_content/SistemApp",
   "Mode": "Default",
@@ -1288,6 +1288,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo-dark2.svg"
+    },
+    {
+      "Identity": "C:\\Users\\Mesa003026\\Documents\\Sistem\\wwwroot\\images\\logo-dark3.svg",
+      "SourceId": "SistemApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Mesa003026\\Documents\\Sistem\\wwwroot\\",
+      "BasePath": "_content/SistemApp",
+      "RelativePath": "images/logo-dark3.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo-dark3.svg"
     },
     {
       "Identity": "C:\\Users\\Mesa003026\\Documents\\Sistem\\wwwroot\\images\\logo-light.svg",

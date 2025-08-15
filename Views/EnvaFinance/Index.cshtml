@@ -1,0 +1,102 @@
+@model List<SistemApp.ViewModels.FinanceSummaryViewModel>
+@{
+    ViewData["Title"] = "Finansal Durumlar";
+    var companies = ViewBag.Companies as SelectList;
+    var selectedCompanyId = ViewBag.SelectedCompanyId;
+    var startDate = ViewBag.StartDate;
+    var endDate = ViewBag.EndDate;
+}
+<div class="w-full mx-auto px-2 sm:px-4 md:px-8 py-4">
+    <h1 class="text-4xl font-extrabold text-center mb-2">Finansal Rapor</h1>
+    <div class="text-center text-gray-500 mb-8">Genel finansal durum özeti</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 w-full">
+        <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+            <div class="text-2xl font-bold text-purple-700 flex items-center gap-2">@ViewBag.TotalAlacak.ToString("N2") ₽ <span class="text-2xl">&#128197;</span></div>
+            <div class="text-gray-500 mt-1">Toplam Alacak</div>
+            <div class="text-xs text-gray-400">Tüm hizmetlerin toplam tutarı</div>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+            <div class="text-2xl font-bold text-green-600 flex items-center gap-2">@ViewBag.TotalTahsilat.ToString("N2") ₽ <span class="text-2xl">&#36;</span></div>
+            <div class="text-gray-500 mt-1">Toplam Tahsilat</div>
+            <div class="text-xs text-gray-400">Alınan toplam ödeme</div>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+            <div class="text-2xl font-bold text-yellow-600 flex items-center gap-2">@ViewBag.KalanAlacak.ToString("N2") ₽ <span class="text-2xl">&#9888;&#65039;</span></div>
+            <div class="text-gray-500 mt-1">Kalan Alacak</div>
+            <div class="text-xs text-gray-400">Tahsil edilmemiş tutar</div>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+            <div class="text-2xl font-bold text-blue-600 flex items-center gap-2">@((ViewBag.TahsilatOrani * 100).ToString("N1"))% <span class="text-2xl">&#37;</span></div>
+            <div class="text-gray-500 mt-1">Tahsilat Oranı</div>
+            <div class="text-xs text-gray-400">Başarı oranı</div>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 w-full">
+        <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+            <div class="text-2xl font-bold text-teal-600 flex items-center gap-2">@ViewBag.AyKazanc.ToString("N2") ₽ <span class="text-2xl">&#128197;</span></div>
+            <div class="text-gray-500 mt-1">Bu Ay Kazanç</div>
+            <div class="text-xs text-gray-400">Bu ay verilen hizmetler</div>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+            <div class="text-2xl font-bold text-pink-600 flex items-center gap-2">@ViewBag.YilKazanc.ToString("N2") ₽ <span class="text-2xl">&#128197;</span></div>
+            <div class="text-gray-500 mt-1">Bu Yıl Kazanç</div>
+            <div class="text-xs text-gray-400">Bu yıl verilen hizmetler</div>
+        </div>
+    </div>
+    <div class="bg-white rounded-xl shadow p-6 mb-8 w-full">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-2"><span class="text-2xl">&#128101;</span> Müşteri Finansal Durumları</h2>
+        <div class="overflow-x-auto w-full">
+            <table class="min-w-full text-sm w-full">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="px-4 py-2">Müşteri</th>
+                        <th class="px-4 py-2 text-right">Toplam Alacak</th>
+                        <th class="px-4 py-2 text-right">Toplam Tahsilat</th>
+                        <th class="px-4 py-2 text-right">Kalan Alacak</th>
+                        <th class="px-4 py-2">Son Hizmet</th>
+                        <th class="px-4 py-2">Son Ödeme</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var m in ViewBag.MusteriFinans as IEnumerable<dynamic>)
+                    {
+                        <tr>
+                            <td>@m.Musteri</td>
+                            <td class="text-right">@m.ToplamAlacak.ToString("N2") ₽</td>
+                            <td class="text-right">@m.ToplamTahsilat.ToString("N2") ₽</td>
+                            <td class="text-right" style="color:@((decimal)m.KalanAlacak > 0 ? "#e11d48" : "#059669")">@m.KalanAlacak.ToString("N2") ₽</td>
+                            <td>@((m.SonHizmet == DateTime.MinValue) ? "-" : ((DateTime)m.SonHizmet).ToString("dd.MM.yyyy"))</td>
+                            <td>@((m.SonOdeme == null) ? "-" : ((DateTime)m.SonOdeme).ToString("dd.MM.yyyy"))</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="bg-white rounded-xl shadow p-6 mb-8 w-full">
+        <h2 class="text-xl font-bold mb-4 flex items-center gap-2"><span class="text-2xl">&#128196;</span> Aylık Kazanç Trendi</h2>
+        <div class="overflow-x-auto w-full">
+            <table class="min-w-full text-sm w-full">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="px-4 py-2">Ay</th>
+                        <th class="px-4 py-2 text-right">Kazanç</th>
+                        <th class="px-4 py-2 text-right">Tahsilat</th>
+                        <th class="px-4 py-2 text-right">Fark</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var t in ViewBag.AylikTrend as IEnumerable<dynamic>)
+                    {
+                        <tr>
+                            <td>@t.Ay</td>
+                            <td class="text-right">@t.Kazanc.ToString("N2") ₽</td>
+                            <td class="text-right">@t.Tahsilat.ToString("N2") ₽</td>
+                            <td class="text-right" style="color:#059669">@t.Fark.ToString("N2") ₽</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

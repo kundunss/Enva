@@ -19399,8 +19399,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\EnvaFinance\\Index.cshtml",
+      "TargetPath": "Views\\EnvaFinance\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\MailEntries\\Details.cshtml",
       "TargetPath": "Views\\MailEntries\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\EnvaPay\\Create.cshtml",
+      "TargetPath": "Views\\EnvaPay\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -19419,6 +19429,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\Home\\Dashboard.cshtml",
+      "TargetPath": "Views\\Home\\Dashboard.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\Sites\\Index.cshtml",
       "TargetPath": "Views\\Sites\\Index.cshtml",
       "FileKind": "mvc"
@@ -19426,6 +19441,11 @@
     {
       "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\Companies\\Delete.cshtml",
       "TargetPath": "Views\\Companies\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\EnvaService\\Create.cshtml",
+      "TargetPath": "Views\\EnvaService\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -19454,8 +19474,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\EnvaService\\Index.cshtml",
+      "TargetPath": "Views\\EnvaService\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\Companies\\Details.cshtml",
       "TargetPath": "Views\\Companies\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\EnvaPay\\Delete.cshtml",
+      "TargetPath": "Views\\EnvaPay\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\EnvaPay\\Index.cshtml",
+      "TargetPath": "Views\\EnvaPay\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -19559,6 +19594,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\EnvaService\\Edit.cshtml",
+      "TargetPath": "Views\\EnvaService\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\Domains\\Edit.cshtml",
       "TargetPath": "Views\\Domains\\Edit.cshtml",
       "FileKind": "mvc"
@@ -19576,6 +19616,11 @@
     {
       "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\Personnel\\Import.cshtml",
       "TargetPath": "Views\\Personnel\\Import.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\EnvaService\\Delete.cshtml",
+      "TargetPath": "Views\\EnvaService\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -19606,6 +19651,11 @@
     {
       "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Mesa003026\\Documents\\Sistem\\Views\\EnvaPay\\Edit.cshtml",
+      "TargetPath": "Views\\EnvaPay\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -1,7 +1,7 @@
 @model SistemApp.ViewModels.UserEditViewModel
 
 @{
-    ViewData["Title"] = "Edit User";
+    ViewData["Title"] = "Kullanıcıyı Düzenle";
 }
 
 <h1 class="text-3xl font-bold mb-6">@ViewData["Title"]</h1>
@@ -14,49 +14,49 @@
         <input type="hidden" asp-for="Id" />
         
         <div class="mb-5">
-            <label asp-for="Username" class="block text-sm font-medium text-gray-700 mb-1"></label>
+            <label asp-for="Username" class="block text-sm font-medium text-gray-700 mb-1">Kullanıcı Adı</label>
             <input asp-for="Username" readonly
                    class="w-full rounded border border-gray-300 px-3 py-2 bg-gray-100 cursor-not-allowed" />
             <span asp-validation-for="Username" class="text-red-600 text-sm"></span>
         </div>
         
         <div class="mb-5">
-            <label asp-for="FirstName" class="block text-sm font-medium text-gray-700 mb-1"></label>
+            <label asp-for="FirstName" class="block text-sm font-medium text-gray-700 mb-1">Ad</label>
             <input asp-for="FirstName" 
                    class="w-full rounded border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
             <span asp-validation-for="FirstName" class="text-red-600 text-sm"></span>
         </div>
 
         <div class="mb-5">
-            <label asp-for="LastName" class="block text-sm font-medium text-gray-700 mb-1"></label>
+            <label asp-for="LastName" class="block text-sm font-medium text-gray-700 mb-1">Soyad</label>
             <input asp-for="LastName"
                    class="w-full rounded border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
             <span asp-validation-for="LastName" class="text-red-600 text-sm"></span>
         </div>
 
         <div class="mb-5">
-            <label asp-for="Password" class="block text-sm font-medium text-gray-700 mb-1"></label>
+            <label asp-for="Password" class="block text-sm font-medium text-gray-700 mb-1">Şifre (değiştirmek istemiyorsanız boş bırakın)</label>
             <input asp-for="Password" type="password"
                    class="w-full rounded border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
             <span asp-validation-for="Password" class="text-red-600 text-sm"></span>
         </div>
 
         <div class="mb-5">
-            <label asp-for="Role" class="block text-sm font-medium text-gray-700 mb-1"></label>
+            <label asp-for="Role" class="block text-sm font-medium text-gray-700 mb-1">Rol</label>
             <select asp-for="Role" 
                     class="w-full rounded border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option value="Admin">Admin</option>
-                <option value="Regular">Regular</option>
+                <option value="Admin">Yönetici</option>
+                <option value="Regular">Kullanıcı</option>
             </select>
             <span asp-validation-for="Role" class="text-red-600 text-sm"></span>
         </div>
 
         <div class="flex space-x-3">
-            <input type="submit" value="Save" 
+            <input type="submit" value="Kaydet" 
                    class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded cursor-pointer transition" />
             <a asp-action="Index" 
                class="px-6 py-2 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded inline-block text-center transition">
-               Back to List
+               Listeye Dön
             </a>
         </div>
     </form>

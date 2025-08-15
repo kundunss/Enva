@@ -1,0 +1,74 @@
+@model IEnumerable<SistemApp.Models.PayEntry>
+@{
+    ViewData["Title"] = "EnvaPay";
+}
+<div class="bg-white dark:bg-gray-900 shadow rounded-lg">
+    <div class="px-6 py-4 border-b border-gray-300 dark:border-gray-700">
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-100">EnvaPay</h1>
+    </div>
+    <div class="p-6">
+        <!-- Sadece üstteki filtre ve buton kalacak -->
+        <div class="flex flex-wrap items-center justify-between mb-4 gap-2">
+            <a href="@Url.Action("Create", "EnvaPay")" class="px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 transition font-semibold shadow">Ödeme Ekle</a>
+        </div>
+        <form method="get" class="flex flex-wrap gap-2 mb-4 items-end">
+            <div>
+                <label for="companyId" class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">Firma</label>
+                <select id="companyId" name="companyId" asp-items="ViewBag.Companies" class="px-2 py-1 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                    <option value="">Tümü</option>
+                </select>
+            </div>
+            <div>
+                <label for="startDate" class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">Başlangıç Tarihi</label>
+                <input type="date" id="startDate" name="startDate" value="@ViewBag.StartDate" class="px-2 py-1 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white" />
+            </div>
+            <div>
+                <label for="endDate" class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">Bitiş Tarihi</label>
+                <input type="date" id="endDate" name="endDate" value="@ViewBag.EndDate" class="px-2 py-1 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white" />
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Filtrele</button>
+            </div>
+        </form>
+        @if (ViewBag.CurrentDebt != null)
+        {
+            <div class="mb-4 p-3 rounded bg-yellow-100 dark:bg-yellow-900 text-yellow-900 dark:text-yellow-100 font-semibold">
+                Güncel Borç: @((ViewBag.CurrentDebt as double?)?.ToString("N2") ?? "0,00") ₺
+            </div>
+        }
+        <div class="overflow-x-auto max-h-[70vh]">
+            <table class="min-w-full table-fixed divide-y divide-gray-300 dark:divide-gray-700">
+                <thead class="bg-gray-100 dark:bg-gray-800">
+                    <tr>
+                        <th class="w-16 px-3 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-400 uppercase tracking-wider sticky top-0 bg-gray-100 dark:bg-gray-800 z-20">Sıra No</th>
+                        <th class="w-32 px-3 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-400 uppercase tracking-wider sticky top-0 bg-gray-100 dark:bg-gray-800 z-20">Tarih</th>
+                        <th class="w-40 px-3 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-400 uppercase tracking-wider sticky top-0 bg-gray-100 dark:bg-gray-800 z-20">Firma</th>
+                        <th class="w-40 px-3 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-400 uppercase tracking-wider sticky top-0 bg-gray-100 dark:bg-gray-800 z-20">Açıklama</th>
+                        <th class="w-24 px-3 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-400 uppercase tracking-wider sticky top-0 bg-gray-100 dark:bg-gray-800 z-20">Tutar</th>
+                        <th class="w-32 px-3 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-400 uppercase tracking-wider sticky top-0 bg-gray-100 dark:bg-gray-800 z-20">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white dark:bg-gray-900 divide-y divide-gray-300 dark:divide-gray-700">
+                @{
+                    var modelList = Model?.ToList() ?? new List<SistemApp.Models.PayEntry>();
+                    for (int i = 0; i < modelList.Count; i++)
+                    {
+                        var item = modelList[i];
+                <tr class="hover:bg-gray-100 dark:hover:bg-gray-800 @(i % 2 == 1 ? "bg-gray-50 dark:bg-gray-800" : "")">
+                    <td class="px-3 py-2 text-sm text-gray-900 dark:text-gray-100 font-medium truncate">@(i + 1)</td>
+                    <td class="px-3 py-2 text-sm text-gray-900 dark:text-gray-100 truncate">@item.Date.ToString("yyyy-MM-dd")</td>
+                    <td class="px-3 py-2 text-sm text-gray-900 dark:text-gray-100 truncate">@item.Company?.Name</td>
+                    <td class="px-3 py-2 text-sm text-gray-900 dark:text-gray-100 truncate">@item.Description</td>
+                    <td class="px-3 py-2 text-sm text-gray-900 dark:text-gray-100 truncate">@item.Amount.ToString("N0") ₺</td>
+                    <td class="px-3 py-2 text-sm text-gray-900 dark:text-gray-100 flex gap-2">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="px-3 py-1 rounded bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition text-xs font-semibold shadow">Düzenle</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="px-3 py-1 rounded bg-red-600 text-white hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 transition text-xs font-semibold shadow">Sil</a>
+                    </td>
+                </tr>
+                    }
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

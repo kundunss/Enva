@@ -1,3 +1,4 @@
+
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SistemApp.Models;
@@ -22,10 +23,19 @@ namespace SistemApp.Data
         public DbSet<MailPasswordHistory> MailPasswordHistory { get; set; }
         public DbSet<InventoryItem> InventoryItems { get; set; }
         public DbSet<InventoryAssignmentHistory> InventoryAssignmentHistory { get; set; }
+        public DbSet<ServiceEntry> ServiceEntries { get; set; }
+        public DbSet<PayEntry> PayEntries { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            // ServiceEntry-Company ilişkisinde Cascade silme
+            modelBuilder.Entity<ServiceEntry>()
+                .HasOne(s => s.Company)
+                .WithMany(c => c.ServiceEntries)
+                .HasForeignKey(s => s.CompanyId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             // Configure cascade delete behavior
             modelBuilder.Entity<Company>()

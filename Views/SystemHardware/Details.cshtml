@@ -1,37 +1,37 @@
 @model SistemApp.Models.SystemHardware
 
 @{
-    ViewData["Title"] = "System Hardware Details";
+    ViewData["Title"] = "Sistem Donanımı Detayları";
 }
 
 <div class="container mx-auto px-4 py-6">
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-        <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">System Hardware Details</h1>
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Sistem Donanımı Detayları</h1>
 
         <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
             <dl class="divide-y divide-gray-200 dark:divide-gray-700">
                 <div class="py-3 grid grid-cols-3 gap-4">
-                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">Equipment Type</dt>
+                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">Ekipman Türü</dt>
                     <dd class="col-span-2 text-sm text-gray-900 dark:text-white">@Model.EquipmentType?.Name</dd>
                 </div>
                 <div class="py-3 grid grid-cols-3 gap-4">
-                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">Description</dt>
+                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">Açıklama</dt>
                     <dd class="col-span-2 text-sm text-gray-900 dark:text-white">@Model.Description</dd>
                 </div>
                 <div class="py-3 grid grid-cols-3 gap-4">
-                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">IP Address</dt>
+                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">IP Adresi</dt>
                     <dd class="col-span-2 text-sm text-gray-900 dark:text-white">@Model.IpAddress</dd>
                 </div>
                 <div class="py-3 grid grid-cols-3 gap-4">
-                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">Username</dt>
+                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">Kullanıcı Adı</dt>
                     <dd class="col-span-2 text-sm text-gray-900 dark:text-white">@Model.Username</dd>
                 </div>
                 <div class="py-3 grid grid-cols-3 gap-4">
-                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">Password</dt>
+                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">Şifre</dt>
                     <dd class="col-span-2 text-sm text-gray-900 dark:text-white">@Model.Password</dd>
                 </div>
                 <div class="py-3 grid grid-cols-3 gap-4">
-                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">Site</dt>
+                    <dt class="text-sm font-medium text-gray-700 dark:text-gray-300">Şantiye</dt>
                     <dd class="col-span-2 text-sm text-gray-900 dark:text-white">@Model.Site?.Name</dd>
                 </div>
             </dl>

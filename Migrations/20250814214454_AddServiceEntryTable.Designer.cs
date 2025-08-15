@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SistemApp.Data;
 
@@ -10,9 +11,11 @@ using SistemApp.Data;
 namespace SistemApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250814214454_AddServiceEntryTable")]
+    partial class AddServiceEntryTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
@@ -425,32 +428,6 @@ namespace SistemApp.Migrations
                     b.ToTable("PasswordHistory");
                 });
 
-            modelBuilder.Entity("SistemApp.Models.PayEntry", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("CompanyId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CompanyId");
-
-                    b.ToTable("PayEntries");
-                });
-
             modelBuilder.Entity("SistemApp.Models.Personnel", b =>
                 {
                     b.Property<int>("Id")
@@ -712,17 +689,6 @@ namespace SistemApp.Migrations
                     b.Navigation("SystemHardware");
                 });
 
-            modelBuilder.Entity("SistemApp.Models.PayEntry", b =>
-                {
-                    b.HasOne("SistemApp.Models.Company", "Company")
-                        .WithMany()
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Company");
-                });
-
             modelBuilder.Entity("SistemApp.Models.Personnel", b =>
                 {
                     b.HasOne("SistemApp.Models.Site", "Site")
@@ -737,7 +703,7 @@ namespace SistemApp.Migrations
             modelBuilder.Entity("SistemApp.Models.ServiceEntry", b =>
                 {
                     b.HasOne("SistemApp.Models.Company", "Company")
-                        .WithMany("ServiceEntries")
+                        .WithMany()
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -785,8 +751,6 @@ namespace SistemApp.Migrations
 
             modelBuilder.Entity("SistemApp.Models.Company", b =>
                 {
-                    b.Navigation("ServiceEntries");
-
                     b.Navigation("Sites");
 
                     b.Navigation("SystemHardware");
